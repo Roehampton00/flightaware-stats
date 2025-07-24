@@ -105,6 +105,26 @@
       }
     });
   </script>
+<div class="tab-content" id="weather" style="display:none;">
+    <h2>☁️ Weather Impact Note – 24 July 2025</h2>
+    <p>On 24 July 2025, Roehampton (SW15) experienced rain and low cloud cover throughout the day.
+    This significantly reduces ADS-B signal performance, especially for indoor setups.</p>
+    <h3>Expected effects:</h3>
+    <ul>
+        <li>Reduced signal range and fewer aircraft tracked.</li>
+        <li>Weaker ADS-B signal penetration through walls/windows.</li>
+        <li>Lower number of MLAT and total positions.</li>
+    </ul>
+    <p><strong>💡 Tip:</strong> Indoor setups are more vulnerable to weather. Positioning the antenna closer to a window or higher up can help.</p>
+</div>
 
+<script>
+    // Add Weather tab
+    const weatherTab = document.createElement('button');
+    weatherTab.className = 'tab-button';
+    weatherTab.textContent = 'Weather Impact';
+    weatherTab.onclick = () => showTab('weather');
+    document.querySelector('.tab').appendChild(weatherTab);
+</script>
 </body>
 </html>
