@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Adam Davison - FlightAware Stats</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    h1 {
+      color: #005288;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    table, th, td {
+      border: 1px solid #bbb;
+    }
+    th, td {
+      padding: 8px 12px;
+      text-align: center;
+    }
+    canvas {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Adam Davison's FlightAware Feeder Stats</h1>
+  <p><strong>Location:</strong> Roehampton (Near EGLL)</p>
+  <p><strong>Site Started:</strong> 22 July 2025</p>
+  <p><strong>Feeder Rank:</strong> ~30,472 (as of 24 July)</p>
+
+  <h2>📊 Daily Aircraft Tracked</h2>
+  <canvas id="aircraftChart"></canvas>
+
+  <h2>📅 Daily Stats Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>ADS-B</th>
+        <th>MLAT</th>
+        <th>Other</th>
+        <th>Total Aircraft</th>
+        <th>Total Positions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>22/07/2025</td>
+        <td>1,963</td>
+        <td>132</td>
+        <td>104</td>
+        <td>2,199</td>
+        <td>402,460</td>
+      </tr>
+      <tr>
+        <td>23/07/2025</td>
+        <td>2,745</td>
+        <td>267</td>
+        <td>115</td>
+        <td>3,127</td>
+        <td>743,806</td>
+      </tr>
+      <tr>
+        <td>24/07/2025</td>
+        <td>1,967</td>
+        <td>148</td>
+        <td>115</td>
+        <td>2,230</td>
+        <td>325,580</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const ctx = document.getElementById('aircraftChart').getContext('2d');
+    const aircraftChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['22 Jul', '23 Jul', '24 Jul'],
+        datasets: [{
+          label: 'Total Aircraft',
+          data: [2199, 3127, 2230],
+          borderColor: 'rgba(0, 123, 255, 1)',
+          backgroundColor: 'rgba(0, 123, 255, 0.2)',
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
