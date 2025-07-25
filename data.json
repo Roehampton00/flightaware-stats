@@ -4,5 +4,11 @@
         "total_positions": 350000,
         "mlat_aircraft": 150,
         "global_rank": 30000
+    },
+    {
+        "date": "2025-07-25",
+        "total_positions": 350000,
+        "mlat_aircraft": 150,
+        "global_rank": 30000
     }
 ]
